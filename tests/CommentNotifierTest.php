@@ -9,7 +9,11 @@ class CommentNotifierTest extends SapphireTest {
 	protected $extraDataObjects = array(
 		'CommentNotifiableTest_DataObject'
 	);
-	
+
+    protected $requiredExtensions = array(
+        'CommentNotifiableTest_DataObject' => array('CommentNotifiable', 'CommentsExtension')
+    );
+
 	public function setUp() {
 		parent::setUp();
 		Email::set_mailer(new EmailTest_Mailer());
